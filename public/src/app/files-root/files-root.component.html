@@ -1,0 +1,16 @@
+<div>
+    <div>
+        <app-dir *ngFor="let dir of filesService.root.dirs; trackBy: filesService.trackerDir" [dir]="dir"
+                 [path]="dir.name + '/'"></app-dir>
+    </div>
+    <div id="files" (drop)="filesService.onDrop($event,'')" (dragover)="filesService.onHover($event)">
+        <div>
+            <app-file *ngFor="let file of filesService.root.files; trackBy: filesService.trackerFile" [path]="''"
+                      [file]="file"></app-file>
+        </div>
+    </div>
+    <div>
+        <input type="text" name="name" id="name" [(ngModel)]="dirName">
+        <button (click)="filesService.addDir('',dirName)">add</button>
+    </div>
+</div>
