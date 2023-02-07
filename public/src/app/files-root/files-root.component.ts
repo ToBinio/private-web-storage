@@ -7,8 +7,6 @@ import {FileService} from "../file.service";
     styleUrls: ['./files-root.component.scss']
 })
 export class FilesRootComponent {
-    dirName: string = ""
-
     constructor(public filesService: FileService) {
     }
 }

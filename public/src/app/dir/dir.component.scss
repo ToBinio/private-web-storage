@@ -1,0 +1,28 @@
+#files {
+  min-height: 25px;
+
+  padding: 5px;
+  border: #08141e 1px solid;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+#items {
+  background-color: #0f2a3f;
+  padding: 10px 10px 10px 0;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-left: 20px;
+}
+
+summary {
+  color: white;
+}

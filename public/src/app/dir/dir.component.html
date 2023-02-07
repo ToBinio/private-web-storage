@@ -1,7 +1,8 @@
 <details>
     <summary>
-        {{dir.name}}
+        <button (click)="fileService.addDir(path)">+</button>
         <button (click)="fileService.delete(path,'')">X</button>
+        {{dir.name}}
     </summary>
     <div id="items">
         <div>
@@ -11,10 +12,6 @@
         <div id="files" (drop)="fileService.onDrop($event,path)" (dragover)="fileService.onHover($event)">
             <app-file *ngFor="let file of dir.files; trackBy: fileService.trackerFile" [path]="path"
                       [file]="file"></app-file>
-        </div>
-        <div>
-            <input type="text" name="name" id="name" [(ngModel)]="dirName">
-            <button (click)="fileService.addDir(path,dirName)">add</button>
         </div>
     </div>
 </details>

@@ -1,4 +1,24 @@
 #files {
-  min-height: 50px;
-  background-color: gray;
+  min-height: 25px;
+
+  padding: 5px;
+  border: #08141e 1px solid;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+main {
+  background-color: #0f2a3f;
+  padding: 10px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: max-content;
 }

@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style file */
+* {
+  font-family: Arial, serif;
+}
+
+body {
+  background-color: #08141e;
+}
+
+button {
+  background-color: transparent;
+  color: White;
+  border: 1px white solid;
+  border-radius: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  margin-left: 5px;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: white;
+  color: #08141e;
+}

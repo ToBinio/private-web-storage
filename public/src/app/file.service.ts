@@ -23,7 +23,15 @@ export class FileService {
         })
     }
 
+    public rootHasLoaded(): boolean {
+        return this.root != undefined;
+    }
+
     public delete(path: string, file: string) {
+
+        if (!confirm("You Shure you want to delete " + path + file))
+            return
+
         this.http.delete("http://localhost:3000/file/" + path + file).subscribe(() => this.updateFiles());
     }
 
@@ -44,7 +52,10 @@ export class FileService {
         event.preventDefault();
     }
 
-    addDir(path: string, dirName: string) {
+    addDir(path: string) {
+
+        let dirName = prompt("enter Dir name");
+
         this.http.post("http://localhost:3000/file/dir/" + path + dirName, {}).subscribe(() => this.updateFiles());
     }
 

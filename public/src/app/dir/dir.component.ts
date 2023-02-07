@@ -6,16 +6,11 @@ import {Dir, FileService} from "../file.service";
     templateUrl: './dir.component.html',
     styleUrls: ['./dir.component.scss']
 })
-export class DirComponent implements OnInit {
+export class DirComponent {
 
     @Input() dir!: Dir
     @Input() path!: string;
 
-    dirName: string = ""
-
     constructor(public fileService: FileService) {
-    }
-
-    ngOnInit(): void {
     }
 }
