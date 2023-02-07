@@ -18,7 +18,7 @@ export class FileService {
     }
 
     public updateFiles() {
-        this.http.get("http://localhost:3000/files").subscribe((data) => {
+        this.http.get("/files").subscribe((data) => {
             this.root = data as Dir;
         })
     }
@@ -32,7 +32,7 @@ export class FileService {
         if (!confirm("You Shure you want to delete " + path + file))
             return
 
-        this.http.delete("http://localhost:3000/file/" + path + file).subscribe(() => this.updateFiles());
+        this.http.delete("/file/" + path + file).subscribe(() => this.updateFiles());
     }
 
     onDrop(event: DragEvent, path: string) {
@@ -45,7 +45,7 @@ export class FileService {
         const formData = new FormData();
         formData.append('profile', this.form.get('profile')!.value);
 
-        this.http.post<any>("http://localhost:3000/file/file/" + path, formData).subscribe(() => this.updateFiles());
+        this.http.post<any>("/file/file/" + path, formData).subscribe(() => this.updateFiles());
     }
 
     onHover(event: DragEvent) {
@@ -56,7 +56,7 @@ export class FileService {
 
         let dirName = prompt("enter Dir name");
 
-        this.http.post("http://localhost:3000/file/dir/" + path + dirName, {}).subscribe(() => this.updateFiles());
+        this.http.post("/file/dir/" + path + dirName, {}).subscribe(() => this.updateFiles());
     }
 
     trackerFile(index: number, file: string) {
